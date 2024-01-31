@@ -44,7 +44,7 @@ const ChatBody = ({
       {/* generates chat messages based on prop sent from messageResponse in ChatPage
      conidtionally renders message as sender or recipient */}
       <div className="message__container">
-        {messages.map((message: string[]) =>
+        {messages.map((message: any) =>
           message.name === userName ? (
             <div key={message.id} className="message__chats">
               <p className="sender__name">{message.name}</p>

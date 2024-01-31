@@ -17,7 +17,7 @@ const ChatPage = ({
   // typingStatus state is used to trigger active typing message
 
   //  used to scroll to new message
-  const lastMessageRef = useRef(null);
+  const lastMessageRef = useRef<any>(null);
 
   const [typingStatusMessage, setTypingStatusMessage] = useState<string>("");
 
@@ -44,7 +44,7 @@ const ChatPage = ({
 
   // updates active users list upon new login
   useEffect(() => {
-    socket.on("newUserResponse", (data) =>
+    socket.on("newUserResponse", (data: any) =>
       setActiveUsers([...activeUsers, data])
     );
 
