@@ -1,6 +1,7 @@
 import express from "express";
 import http from "http";
-
+import path from "path";
+import { dirname } from "node:path";
 const PORT = 4000;
 
 import { Server } from "socket.io";
@@ -8,6 +9,8 @@ import { Server } from "socket.io";
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server); // instance of socket.io Server class mounted on express server
+
+app.use(express.static("public"));
 
 // listener for user connection
 io.on("connection", (socket) => {
