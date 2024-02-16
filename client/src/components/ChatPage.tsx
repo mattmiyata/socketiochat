@@ -65,7 +65,6 @@ const ChatPage = ({
   // Main ChatPage after login
   return (
     <div className="chat">
-      <ChatBar activeUsers={activeUsers} roomName={roomName} />
       <div className="chat__main">
         <ChatBody
           // passes props to chat body
@@ -75,6 +74,7 @@ const ChatPage = ({
           userName={userName}
           roomName={roomName}
           typingStatusMessage={typingStatusMessage}
+          activeUsers={activeUsers}
         />
         <ChatFooter socket={socket} userName={userName} roomName={roomName} />
       </div>

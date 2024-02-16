@@ -9,6 +9,7 @@ const ChatBody = ({
   userName,
   roomName,
   typingStatusMessage,
+  activeUsers,
 }: {
   socket: any;
   messages: any;
@@ -16,6 +17,7 @@ const ChatBody = ({
   roomName: string;
   userName: string;
   typingStatusMessage: string;
+  activeUsers: any;
 }) => {
   const navigate = useNavigate();
 
@@ -31,11 +33,25 @@ const ChatBody = ({
 
   return (
     <>
-      <header className="chat__mainHeader">
-        <p>Let's Chat!</p>
+      <div className="chat__logo">
+        <h2>Chatter</h2>
         <button className="leaveChat__btn" onClick={handleLeaveChat}>
           LEAVE CHAT
         </button>
+      </div>
+      <header className="chat__mainHeader">
+        <div className="roomname-container">
+          <h4>Room Name</h4>
+          <p className="chat__roomname">{roomName}</p>
+        </div>
+        <div className="chat__active-users">
+          <h4 className="chat__header">ACTIVE USERS</h4>
+          <div className="chat__users">
+            {activeUsers.map((users) => (
+              <p key={users}> {users} </p>
+            ))}
+          </div>
+        </div>
       </header>
       {/*  */}
       {/* Shows messages sent from you */}
@@ -69,6 +85,7 @@ const ChatBody = ({
 
         <div className="message__status">
           <p>{typingStatusMessage}</p>
+          <p>hi</p>
         </div>
         <div ref={lastMessageRef} />
       </div>
