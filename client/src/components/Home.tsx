@@ -24,7 +24,6 @@ const Home = ({ socket }: { socket: any }) => {
           <label htmlFor="username">Username</label>
           <input
             type="text"
-            minLength={6}
             name="userName"
             id="username"
             className="username__input"
@@ -41,6 +40,7 @@ const Home = ({ socket }: { socket: any }) => {
             value={roomName}
             onChange={(e) => setRoomName(e.target.value)}
             required
+            className="roomname__input"
           />
           <button className="home__cta">SIGN IN</button>
         </form>

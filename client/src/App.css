@@ -20,7 +20,8 @@
 .home__header {
   margin-bottom: 30px;
 }
-.username__input {
+.username__input,
+.roomname__input {
   padding: 10px;
   width: 50%;
 }
