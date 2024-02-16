@@ -47,7 +47,7 @@ const ChatBody = ({
         <div className="chat__active-users">
           <h4 className="chat__header">ACTIVE USERS</h4>
           <div className="chat__users">
-            {activeUsers.map((users) => (
+            {activeUsers.map((users: any) => (
               <p key={users}> {users} </p>
             ))}
           </div>
@@ -85,7 +85,6 @@ const ChatBody = ({
 
         <div className="message__status">
           <p>{typingStatusMessage}</p>
-          <p>hi</p>
         </div>
         <div ref={lastMessageRef} />
       </div>

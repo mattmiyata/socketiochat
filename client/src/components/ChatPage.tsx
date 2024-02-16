@@ -1,5 +1,4 @@
 import ChatFooter from "./ChatFooter";
-import ChatBar from "./ChatBar";
 import ChatBody from "./ChatBody";
 import { useEffect, useState, useRef } from "react";
 
